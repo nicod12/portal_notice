@@ -21,7 +21,7 @@ async function fetchBlog(id: number) {
 const page = async ({ params }: any) => {
     
    const blog = await fetchBlog(params.id)
-   console.log(blog)
+
 
    const imageUrl = "http://localhost:1337" +blog.data.attributes.img.data.attributes.url
 
