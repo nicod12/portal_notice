@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { CategoryProvider } from "@/context/CategoryContext";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="mx-auto max-w-screen-lg">
-          <CategoryProvider>
-           <div className="flex min-h-screen flex-col items-center p-24">{children}</div>
-          </CategoryProvider>
-          
-        </div>
+        <CategoryProvider>
+          <Navbar />  
+          <div className="mx-auto max-w-screen-lg">
+            <div className="flex items-center min-h-screen p-24">{children}</div>
+            
+          </div>
+        </CategoryProvider>
       </body>
     </html>
   );

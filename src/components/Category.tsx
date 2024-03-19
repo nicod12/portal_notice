@@ -14,9 +14,9 @@ const Category = ({ cat }: any) => {
       onClick={handleCategoryClick}
       className={`${
         cat.attributes.Title === category
-          ? "bg-[#ffffff] text-black"
-          : "bg-[#af8533]"
-      } p-4 rounded-lg shadow-md cursor-pointer`}
+          ? "bg-[#2b2a2a] text-white"
+          : ""
+      } p-2 rounded-lg shadow-md cursor-pointer hover:bg-[#2b2a2a] hover:text-white`}
     >
       {cat.attributes?.Title}
     </div>

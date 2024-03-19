@@ -1,6 +1,6 @@
-// BlogCard.js
+
 import Link from 'next/link';
-import Image from 'next/image';  // Asegúrate de importar Image desde 'next/image'
+
 
 const BlogCard = ({ blog }: any) => {
   const truncateBlogDesc =
@@ -11,17 +11,16 @@ const BlogCard = ({ blog }: any) => {
   const imageUrl = `http://localhost:1337${blog.attributes.img.data.attributes.url}`;
 
   return (
-    <div className="rounded-lg shadow-md p-4 mb-4 overflow-hidden border border-gray-600 cursor-pointer relative">
+    <div className="rounded-lg w-full shadow-md p-4 mb-8 overflow-hidden border border-gray-600 cursor-pointer relative left-1/2 -translate-x-1/2 ">
       <Link href={`/blog/${blog.id}`}>
-        <div className="relative w-full h-1" style={{ paddingBottom: "100%" }}>
-          <Image
-            layout="fill"
+        <div className="relative w-full">
+          <img
             src={imageUrl}
             alt=""
-            className="rounded-t-lg"
+            className="rounded-t-lg w-full h-[300px] "
           />
           {blog.attributes.categories.data.length > 0 && (
-            <div className="category-label absolute bottom-2 left-2 bg-[#ffffff] text-black p-2 rounded-md">
+            <div className="category-label absolute top-2 left-2 bg-[#dad7d7] bg-opacity-55 text-black p-2 rounded-md">
               {blog.attributes.categories.data[0]?.attributes.Title}
             </div>
           )}
